@@ -168,7 +168,7 @@ For a planar field $\mathbf F=\langle P,Q\rangle$, the scalar two-dimensional
 curl is
 
 $$
-\operatorname{curl}\mathbf F
+\mathrm{curl}\,\mathbf F
 =\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}.
 $$
 
