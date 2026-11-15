@@ -44,9 +44,9 @@ model, not a general-purpose physics engine.
 
 To test **path dependence**, the starting and ending points are kept fixed:
 
-\[
+$$
 A=(0,0), \qquad B=(2,2).
-\]
+$$
 
 Keeping the endpoints fixed is important. If the endpoints and the route were
 changed at the same time, a different work value could be caused by either
@@ -57,45 +57,45 @@ The three paths are:
 
 ### Path 1: Straight diagonal
 
-\[
+$$
 \mathbf r(t)=\langle 2t,2t\rangle,\qquad 0\leq t\leq 1.
-\]
+$$
 
-\[
+$$
 \mathbf r'(t)=\langle2,2\rangle.
-\]
+$$
 
 ### Path 2: Horizontal, then vertical
 
 This is a piecewise path and must be integrated segment by segment.
 
-\[
+$$
 \mathbf r_1(t)=\langle2t,0\rangle,\qquad
 \mathbf r_1'(t)=\langle2,0\rangle
-\]
+$$
 
 followed by
 
-\[
+$$
 \mathbf r_2(t)=\langle2,2t\rangle,\qquad
 \mathbf r_2'(t)=\langle0,2\rangle.
-\]
+$$
 
 ### Path 3: Vertical, then horizontal
 
-\[
+$$
 \mathbf r_1(t)=\langle0,2t\rangle,\qquad
 \mathbf r_1'(t)=\langle0,2\rangle
-\]
+$$
 
 followed by
 
-\[
+$$
 \mathbf r_2(t)=\langle2t,2\rangle,\qquad
 \mathbf r_2'(t)=\langle2,0\rangle.
-\]
+$$
 
-Every segment uses \(0\leq t\leq1\). The segment results are then added.
+Every segment uses $0\leq t\leq1$. The segment results are then added.
 
 ---
 
@@ -105,72 +105,72 @@ Every segment uses \(0\leq t\leq1\). The segment results are then added.
 
 A two-dimensional vector field assigns a vector to every position:
 
-\[
+$$
 \mathbf F(x,y)=\langle F_x(x,y),F_y(x,y)\rangle.
-\]
+$$
 
 The vector has:
 
 - **Magnitude:** the strength of the force.
 - **Direction:** the direction in which the force pushes or pulls.
-- **Position dependence:** the force may change as \((x,y)\) changes.
+- **Position dependence:** the force may change as $(x,y)$ changes.
 
 The arrows in VECTORA's field plots represent direction and relative size.
 The background color represents force magnitude.
 
 ### 3.2 Work along a curve
 
-For a force \(\mathbf F\) and a parameterized curve \(\mathbf r(t)\), work is
+For a force $\mathbf F$ and a parameterized curve $\mathbf r(t)$, work is
 
-\[
+$$
 W=\int_C\mathbf F\cdot d\mathbf r
  =\int_a^b
 \mathbf F(\mathbf r(t))\cdot\mathbf r'(t)\,dt.
-\]
+$$
 
 The terms mean:
 
-- \(\mathbf F(\mathbf r(t))\): force at the current position.
-- \(\mathbf r'(t)\): direction and rate of travel.
+- $\mathbf F(\mathbf r(t))$: force at the current position.
+- $\mathbf r'(t)$: direction and rate of travel.
 - The dot product: the component of force aligned with the motion.
 - The integral: the sum of all infinitesimal work contributions.
 
-For a piecewise curve \(C=C_1\cup C_2\):
+For a piecewise curve $C=C_1\cup C_2$:
 
-\[
+$$
 \int_C\mathbf F\cdot d\mathbf r
 =\int_{C_1}\mathbf F\cdot d\mathbf r
 +\int_{C_2}\mathbf F\cdot d\mathbf r.
-\]
+$$
 
 ### 3.3 Conservative fields
 
 A field is conservative on a domain if there is a scalar potential
-\(\phi(x,y)\) such that
+$\phi(x,y)$ such that
 
-\[
+$$
 \mathbf F=\nabla\phi
 =\left\langle\frac{\partial\phi}{\partial x},
 \frac{\partial\phi}{\partial y}\right\rangle.
-\]
+$$
 
 For a conservative field,
 
-\[
+$$
 W=\phi(B)-\phi(A),
-\]
+$$
 
 so the work depends only on the endpoints and not on the path.
 
 ### 3.4 Curl
 
-For a planar field \(\mathbf F=\langle P,Q\rangle\), the scalar two-dimensional
+For a planar field $\mathbf F=\langle P,Q\rangle$, the scalar two-dimensional
 curl is
 
-\[
+$$
 \operatorname{curl}\mathbf F
 =\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}.
-\]
+$$
 
 On a suitable simply connected domain with continuously differentiable
 components, zero curl implies conservativeness. A nonzero curl proves that
@@ -185,58 +185,58 @@ holes.
 
 ### 4.1 Conservative, gravity-like field
 
-\[
+$$
 \mathbf F_c(x,y)=\langle-2x,-2y\rangle.
-\]
+$$
 
 The field points toward the origin. Its potential is
 
-\[
+$$
 \phi(x,y)=-(x^2+y^2).
-\]
+$$
 
 Verification:
 
-\[
+$$
 \nabla\phi
 =\left\langle\frac{\partial}{\partial x}[-(x^2+y^2)],
 \frac{\partial}{\partial y}[-(x^2+y^2)]\right\rangle
 =\langle-2x,-2y\rangle
 =\mathbf F_c.
-\]
+$$
 
 Its curl is
 
-\[
+$$
 \frac{\partial(-2y)}{\partial x}
 -\frac{\partial(-2x)}{\partial y}
 =0-0=0.
-\]
+$$
 
 The potential theorem predicts:
 
-\[
+$$
 W=\phi(2,2)-\phi(0,0)
 =-(2^2+2^2)-0=-8.
-\]
+$$
 
 ### 4.2 Non-conservative, swirling field
 
-\[
+$$
 \mathbf F_{nc}(x,y)=\langle-y,x\rangle.
-\]
+$$
 
 This field circulates counterclockwise around the origin. Its curl is
 
-\[
+$$
 \frac{\partial x}{\partial x}
 -\frac{\partial(-y)}{\partial y}
 =1-(-1)=2.
-\]
+$$
 
 Because the curl is nonzero, this field is not conservative on the plane.
-There is no globally defined scalar potential \(\phi\) satisfying
-\(\nabla\phi=\mathbf F_{nc}\).
+There is no globally defined scalar potential $\phi$ satisfying
+$\nabla\phi=\mathbf F_{nc}$.
 
 ---
 
@@ -249,164 +249,164 @@ derivations explain why the results are expected.
 
 #### Straight path
 
-\[
+$$
 \mathbf F_c(\mathbf r(t))
 =\langle-4t,-4t\rangle.
-\]
+$$
 
-\[
+$$
 \mathbf F_c(\mathbf r(t))\cdot\mathbf r'(t)
 =\langle-4t,-4t\rangle\cdot\langle2,2\rangle
 =-16t.
-\]
+$$
 
-\[
+$$
 W=\int_0^1-16t\,dt=-8.
-\]
+$$
 
 #### Horizontal then vertical
 
 Horizontal segment:
 
-\[
+$$
 \mathbf F_c(2t,0)=\langle-4t,0\rangle,
 \qquad
 \mathbf F_c\cdot\mathbf r_1'=-8t,
-\]
+$$
 
-\[
+$$
 W_1=\int_0^1-8t\,dt=-4.
-\]
+$$
 
 Vertical segment:
 
-\[
+$$
 \mathbf F_c(2,2t)=\langle-4,-4t\rangle,
 \qquad
 \mathbf F_c\cdot\mathbf r_2'=-8t,
-\]
+$$
 
-\[
+$$
 W_2=\int_0^1-8t\,dt=-4.
-\]
+$$
 
-\[
+$$
 W=W_1+W_2=-4-4=-8.
-\]
+$$
 
 #### Vertical then horizontal
 
 Vertical segment:
 
-\[
+$$
 \mathbf F_c(0,2t)=\langle0,-4t\rangle,
 \qquad
 \mathbf F_c\cdot\mathbf r_1'=-8t,
-\]
+$$
 
-\[
+$$
 W_1=-4.
-\]
+$$
 
 Horizontal segment:
 
-\[
+$$
 \mathbf F_c(2t,2)=\langle-4t,-4\rangle,
 \qquad
 \mathbf F_c\cdot\mathbf r_2'=-8t,
-\]
+$$
 
-\[
+$$
 W_2=-4.
-\]
+$$
 
-\[
+$$
 W=-8.
-\]
+$$
 
 ### 5.2 Non-conservative field
 
 #### Straight path
 
-\[
+$$
 \mathbf F_{nc}(2t,2t)=\langle-2t,2t\rangle.
-\]
+$$
 
-\[
+$$
 \mathbf F_{nc}\cdot\mathbf r'
 =\langle-2t,2t\rangle\cdot\langle2,2\rangle=0.
-\]
+$$
 
-\[
+$$
 W=0.
-\]
+$$
 
 #### Horizontal then vertical
 
 Horizontal segment:
 
-\[
+$$
 \mathbf F_{nc}(2t,0)=\langle0,2t\rangle,
 \qquad
 \mathbf F_{nc}\cdot\mathbf r_1'=0,
-\]
+$$
 
-\[
+$$
 W_1=0.
-\]
+$$
 
 Vertical segment:
 
-\[
+$$
 \mathbf F_{nc}(2,2t)=\langle-2t,2\rangle,
 \qquad
 \mathbf F_{nc}\cdot\mathbf r_2'=4,
-\]
+$$
 
-\[
+$$
 W_2=\int_0^1 4\,dt=4.
-\]
+$$
 
-\[
+$$
 W=0+4=4.
-\]
+$$
 
 #### Vertical then horizontal
 
 Vertical segment:
 
-\[
+$$
 \mathbf F_{nc}(0,2t)=\langle-2t,0\rangle,
 \qquad
 \mathbf F_{nc}\cdot\mathbf r_1'=0,
-\]
+$$
 
-\[
+$$
 W_1=0.
-\]
+$$
 
 Horizontal segment:
 
-\[
+$$
 \mathbf F_{nc}(2t,2)=\langle-2,2t\rangle,
 \qquad
 \mathbf F_{nc}\cdot\mathbf r_2'=-4,
-\]
+$$
 
-\[
+$$
 W_2=\int_0^1-4\,dt=-4.
-\]
+$$
 
-\[
+$$
 W=0-4=-4.
-\]
+$$
 
 ### Expected results
 
 | Force field | Straight | Horizontal then vertical | Vertical then horizontal |
 |---|---:|---:|---:|
-| Conservative | \(-8\) | \(-8\) | \(-8\) |
-| Non-conservative | \(0\) | \(4\) | \(-4\) |
+| Conservative | $-8$ | $-8$ | $-8$ |
+| Non-conservative | $0$ | $4$ | $-4$ |
 
 The values are not hardcoded into the interface. They are produced by the
 line-integral engine and checked by automated tests.
@@ -440,7 +440,7 @@ Users can:
 - Change the plot range.
 - Change vector density.
 - Inspect the force at a chosen coordinate.
-- View \(F_x\), \(F_y\), magnitude, curl, and potential information.
+- View $F_x$, $F_y$, magnitude, curl, and potential information.
 
 #### Path simulator
 
@@ -609,12 +609,12 @@ The test suite verifies:
 The project uses two complementary forms of validation:
 
 1. **Numerical validation:** SciPy evaluates
-   \[
+   $$
    \int_0^1\mathbf F(\mathbf r(t))\cdot\mathbf r'(t)\,dt
-   \]
+   $$
    for each segment.
 2. **Symbolic validation:** SymPy independently derives curl, checks
-   \(\nabla\phi=\mathbf F_c\), and integrates the symbolic segment integrands.
+   $\nabla\phi=\mathbf F_c$, and integrates the symbolic segment integrands.
 
 The numerical and exact results agree within the configured tolerance.
 
@@ -625,19 +625,19 @@ The numerical and exact results agree within the configured tolerance.
 The conservative field has zero curl, a valid potential function, and equal
 work for all three routes. This demonstrates path independence:
 
-\[
+$$
 W_{\text{straight}}
 =W_{\text{horizontal}\to\text{vertical}}
 =W_{\text{vertical}\to\text{horizontal}}
 =-8.
-\]
+$$
 
-The swirling field has curl \(2\), no global potential on the plane, and
+The swirling field has curl $2$, no global potential on the plane, and
 different work values:
 
-\[
+$$
 0,\qquad4,\qquad-4.
-\]
+$$
 
 This demonstrates path dependence. The direction of each route matters because
 the force circulates around the origin.
@@ -653,7 +653,7 @@ The experiment therefore supports the project conclusion:
 ## 12. Scope and limitations
 
 - The model is two-dimensional.
-- The endpoints are fixed at \((0,0)\) and \((2,2)\).
+- The endpoints are fixed at $(0,0)$ and $(2,2)$.
 - The application uses two selected analytic vector fields.
 - The three paths are simple analytic curves, not arbitrary user-drawn paths.
 - The plots are educational visualizations, not physical measurements.
